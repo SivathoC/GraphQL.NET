@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace GraphQLProductApp.Data;
 
 public class Components
@@ -7,4 +10,13 @@ public class Components
     public string Description { get; set; }
     public int? ProductId { get; set; }
     public Product Product { get; set; }
+    
+    //Additional Code
+    [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
+    public DateTime UserCreatedDate { get; set; }
+
+    [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
+    public DateTime SystemCreatedDate { get; set; }
+
+    public ICollection<Manufacturers> Manufacturers { get; set; }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using GraphQL.Server;
 using GraphQL.Server.Ui.Playground;
@@ -89,7 +90,7 @@ public class Startup
 
         services
             .AddDbContext<ProductDbContext>(option =>
-                option.UseSqlite(@"Data Source=Product.db"));
+                option.UseSqlite("Data Source=Product.db"));
 
         services.AddTransient<IProductRepository, ProductRepository>();
         services.AddTransient<IComponentRepository, ComponentRepository>();

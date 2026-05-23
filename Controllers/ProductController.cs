@@ -68,7 +68,7 @@ public class ProductController : BaseController
     public async Task<IActionResult> Post(
         [FromForm(Name = "myFile")] IFormFile myFile)
     {
-        using (var fileContentStream = new MemoryStream())
+        await using (var fileContentStream = new MemoryStream())
         {
             await myFile.CopyToAsync(fileContentStream);
             await System.IO.File.WriteAllBytesAsync(Path.Combine(folderPath, myFile.FileName),

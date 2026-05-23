@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace GraphQLProductApp.Data;
@@ -8,7 +9,13 @@ public class Product
     public string Name { get; set; }
     public string Description { get; set; }
     public int Price { get; set; }
+    //New:
+    [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
+    public DateTime UserCreatedDate { get; set; }
 
+    [System.ComponentModel.DefaultValue(typeof(DateTime), "")]
+    public DateTime SystemCreatedDate { get; set; }
+    // End New
     public ICollection<Components> Components { get; set; }
 
     public ProductType ProductType { get; set; }
