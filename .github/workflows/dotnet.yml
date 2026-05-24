@@ -1,0 +1,37 @@
+name: .NET
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore GraphQL.NET.sln
+
+    - name: Build
+      run: dotnet build GraphQL.NET.sln --no-restore
+
+    - name: Test
+      run: dotnet test GraphQL.NET.sln --no-build --verbosity normal
