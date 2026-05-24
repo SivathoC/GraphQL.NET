@@ -8,6 +8,7 @@ public static class SeedData
 {
     public static void Seed(this ProductDbContext productDbContext)
     {
+        // ========== PHASE 1: Seed Products ==========
         var products = new List<Product>
         {
             new()
@@ -65,6 +66,7 @@ public static class SeedData
         productDbContext.Products.AddRange(products);
         productDbContext.SaveChanges();
 
+        // ========== PHASE 2: Seed Components (WITHOUT Manufacturers) ==========
         var components = new List<Components>
         {
             new()
@@ -74,33 +76,7 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 1),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
-                Manufacturers = new List<Manufacturers>()
-                {
-                    new()
-                    {
-                        Name = "Foxconn",
-                        Description = "supplier of keyboards",
-                        Product = products.FirstOrDefault(p => p.ProductId == 1),
-                        Addresses = new List<Address>
-                        {
-                            new()
-                            {
-                                Country = "Italy",
-                                City = "Fr",
-                                Street = "New place",
-                                State = "LI"
-                            },
-                            new()
-                            {
-                                Country = "Germany",
-                                City = "Berlin",
-                                Street = "Main Street",
-                                State = "KI"
-                            }
-
-                        }
-                    },
-                }
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
@@ -109,32 +85,7 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 1),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
-                Manufacturers = new List<Manufacturers>()
-                {
-                    new()
-                    {
-                        Name = "Foxconn",
-                        Description = "supplier of keyboards",
-                        Product = products.FirstOrDefault(p => p.ProductId == 1),
-                        Addresses = new List<Address>
-                        {
-                            new()
-                            {
-                                Country = "Germany",
-                                City = "Berlin",
-                                Street = "Main Street",
-                                State = "KI"
-                            },
-                            new()
-                            {
-                                Country = "Italy",
-                                City = "Fr",
-                                Street = "New place",
-                                State = "LI"
-                            }
-                        }
-                    }
-                }
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
@@ -143,32 +94,7 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 1),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
-                Manufacturers = new List<Manufacturers>()
-                {
-                    new()
-                    {
-                        Name = "Finolex",
-                        Description = "supplier of power cables",
-                        Product = products.FirstOrDefault(p => p.ProductId == 1),
-                        Addresses = new List<Address>
-                        {
-                            new()
-                            {
-                                Country = "India",
-                                City = "Delhi",
-                                Street = "Main Street",
-                                State = "UP"
-                            },
-                            new()
-                            {
-                                Country = "India",
-                                City = "Chennai",
-                                Street = "Ritchi street",
-                                State = "TN"
-                            }
-                        }
-                    }
-                }
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
@@ -177,32 +103,7 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 2),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
-                Manufacturers = new List<Manufacturers>()
-                {
-                    new()
-                    {
-                        Name = "Foxconn",
-                        Description = "supplier of keyboards",
-                        Product = products.FirstOrDefault(p => p.ProductId == 2),
-                        Addresses = new List<Address>
-                        {
-                            new()
-                            {
-                                Country = "Germany",
-                                City = "Berlin",
-                                Street = "Main Street",
-                                State = "KI"
-                            },
-                            new()
-                            {
-                                Country = "Italy",
-                                City = "Fr",
-                                Street = "New place",
-                                State = "LI"
-                            }
-                        }
-                    }
-                }
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
@@ -211,32 +112,7 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 2),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
-                Manufacturers = new List<Manufacturers>()
-                {
-                    new()
-                    {
-                        Name = "Finolex",
-                        Description = "supplier of power cables",
-                        Product = products.FirstOrDefault(p => p.ProductId == 2),
-                        Addresses = new List<Address>
-                        {
-                            new()
-                            {
-                                Country = "India",
-                                City = "Delhi",
-                                Street = "Main Street",
-                                State = "UP"
-                            },
-                            new()
-                            {
-                                Country = "India",
-                                City = "Chennai",
-                                Street = "Ritchi street",
-                                State = "TN"
-                            }
-                        }
-                    }
-                }
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
@@ -245,32 +121,7 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 3),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
-                Manufacturers = new List<Manufacturers>()
-                {
-                    new()
-                    {
-                        Name = "Flextronics",
-                        Description = "supplier of Mouse",
-                        Product = products.FirstOrDefault(p => p.ProductId == 3),
-                        Addresses = new List<Address>
-                        {
-                            new()
-                            {
-                                Country = "India",
-                                City = "Chennai",
-                                Street = "Sholinganallore",
-                                State = "TN"
-                            },
-                            new()
-                            {
-                                Country = "China",
-                                City = "Beijing",
-                                Street = "Xi Lu Streets",
-                                State = "CH"
-                            }
-                        }
-                    }
-                }
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
@@ -279,32 +130,7 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 4),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
-                Manufacturers = new List<Manufacturers>()
-                {
-                    new()
-                    {
-                        Name = "Syntel",
-                        Description = "supplier of Monitors",
-                        Product = products.FirstOrDefault(p => p.ProductId == 4),
-                        Addresses = new List<Address>
-                        {
-                            new()
-                            {
-                                Country = "Germany",
-                                City = "Berlin",
-                                Street = "Main Street",
-                                State = "KI"
-                            },
-                            new()
-                            {
-                                Country = "Italy",
-                                City = "Fr",
-                                Street = "New place",
-                                State = "LI"
-                            }
-                        }
-                    }
-                }
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
@@ -313,14 +139,16 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 4),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
                 Name = "Thermal Fan",
                 Description = "Thermal Fan",
-                Product = products.FirstOrDefault(p => p.ProductId == 4),
+                Product = products.FirstOrDefault(p => p                .ProductId == 4),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
+                Manufacturers = new List<Manufacturers>(),
             },
             new()
             {
@@ -329,10 +157,180 @@ public static class SeedData
                 Product = products.FirstOrDefault(p => p.ProductId == 5),
                 SystemCreatedDate = DateTime.Now,
                 UserCreatedDate = DateTime.Now,
+                Manufacturers = new List<Manufacturers>(),
             }
         };
 
         productDbContext.Components.AddRange(components);
+        productDbContext.SaveChanges();
+
+        // ========== PHASE 3: Seed Manufacturers (NOW with proper ComponentsId) ==========
+        var manufacturers = new List<Manufacturers>
+        {
+            new()
+            {
+                Name = "Foxconn",
+                Description = "supplier of keyboards",
+                ComponentsId = components.First(c => c.Name == "Keys").Id,
+                Addresses = new List<Address>
+                {
+                    new()
+                    {
+                        Country = "Italy",
+                        City = "Fr",
+                        Street = "New place",
+                        State = "LI"
+                    },
+                    new()
+                    {
+                        Country = "Germany",
+                        City = "Berlin",
+                        Street = "Main Street",
+                        State = "KI"
+                    }
+                }
+            },
+            new()
+            {
+                Name = "Foxconn",
+                Description = "supplier of keyboards",
+                ComponentsId = components.First(c => c.Name == "Stickers").Id,
+                Addresses = new List<Address>
+                {
+                    new()
+                    {
+                        Country = "Germany",
+                        City = "Berlin",
+                        Street = "Main Street",
+                        State = "KI"
+                    },
+                    new()
+                    {
+                        Country = "Italy",
+                        City = "Fr",
+                        Street = "New place",
+                        State = "LI"
+                    }
+                }
+            },
+            new()
+            {
+                Name = "Finolex",
+                Description = "supplier of power cables",
+                ComponentsId = components.First(c => c.Name == "Power cord" && c.ProductId == 1).Id,
+                Addresses = new List<Address>
+                {
+                    new()
+                    {
+                        Country = "India",
+                        City = "Delhi",
+                        Street = "Main Street",
+                        State = "UP"
+                    },
+                    new()
+                    {
+                        Country = "India",
+                        City = "Chennai",
+                        Street = "Ritchi street",
+                        State = "TN"
+                    }
+                }
+            },
+            new()
+            {
+                Name = "Foxconn",
+                Description = "supplier of keyboards",
+                ComponentsId = components.First(c => c.Name == "Monitor Cover").Id,
+                Addresses = new List<Address>
+                {
+                    new()
+                    {
+                        Country = "Germany",
+                        City = "Berlin",
+                        Street = "Main Street",
+                        State = "KI"
+                    },
+                    new()
+                    {
+                        Country = "Italy",
+                        City = "Fr",
+                        Street = "New place",
+                        State = "LI"
+                    }
+                }
+            },
+            new()
+            {
+                Name = "Finolex",
+                Description = "supplier of power cables",
+                ComponentsId = components.First(c => c.Name == "Power cord" && c.ProductId == 2).Id,
+                Addresses = new List<Address>
+                {
+                    new()
+                    {
+                        Country = "India",
+                        City = "Delhi",
+                        Street = "Main Street",
+                        State = "UP"
+                    },
+                    new()
+                    {
+                        Country = "India",
+                        City = "Chennai",
+                        Street = "Ritchi street",
+                        State = "TN"
+                    }
+                }
+            },
+            new()
+            {
+                Name = "Flextronics",
+                Description = "supplier of Mouse",
+                ComponentsId = components.First(c => c.Name == "Mouse Pad").Id,
+                Addresses = new List<Address>
+                {
+                    new()
+                    {
+                        Country = "India",
+                        City = "Chennai",
+                        Street = "Sholinganallore",
+                        State = "TN"
+                    },
+                    new()
+                    {
+                        Country = "China",
+                        City = "Beijing",
+                        Street = "Xi Lu Streets",
+                        State = "CH"
+                    }
+                }
+            },
+            new()
+            {
+                Name = "Syntel",
+                Description = "supplier of Monitors",
+                ComponentsId = components.First(c => c.Name == "Mouse Dust cover").Id,
+                Addresses = new List<Address>
+                {
+                    new()
+                    {
+                        Country = "Germany",
+                        City = "Berlin",
+                        Street = "Main Street",
+                        State = "KI"
+                    },
+                    new()
+                    {
+                        Country = "Italy",
+                        City = "Fr",
+                        Street = "New place",
+                        State = "LI"
+                    }
+                }
+            }
+        };
+
+        productDbContext.Manufacturers.AddRange(manufacturers);
         productDbContext.SaveChanges();
     }
 }
