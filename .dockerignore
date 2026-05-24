@@ -21,5 +21,12 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
+**/bin/
+**/obj/
+**/.vs/
+.git
+.vs
+*.user
+*.suo
 LICENSE
 README.md
