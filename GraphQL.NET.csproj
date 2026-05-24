@@ -1,37 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-    <PropertyGroup>
-<<<<<<< HEAD:GraphQLProductApp.csproj
-        <TargetFramework>net8.0</TargetFramework>
-    </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-          <PrivateAssets>all</PrivateAssets>
-        </PackageReference>
-=======
-        <TargetFramework>net6.0</TargetFramework>
-        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.3" />
->>>>>>> 97ad070d197329ab3f7348766bf16846eab9e7f5:GraphQL.NET.csproj
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-        <PackageReference Include="GraphQL" Version="4.6.0" />
-        <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="5.0.2" />
-        <PackageReference Include="GraphQL.Server.Ui.Playground" Version="4.3.1" />
-        <PackageReference Include="EntityFramework" Version="6.4.4" />
-<<<<<<< HEAD:GraphQLProductApp.csproj
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
-        <PackageReference Include="GraphQL.Server.Transports.AspNetCore.SystemTextJson" Version="5.0.2" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="files" />
-=======
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-        <PackageReference Include="GraphQL.Server.Transports.AspNetCore.SystemTextJson" Version="5.0.2" />
->>>>>>> 97ad070d197329ab3f7348766bf16846eab9e7f5:GraphQL.NET.csproj
-    </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="GraphQL" Version="4.6.0" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="5.0.2" />
+    <PackageReference Include="GraphQL.Server.Ui.Playground" Version="4.3.1" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore.SystemTextJson" Version="5.0.2" />
+  </ItemGroup>
+
 </Project>
