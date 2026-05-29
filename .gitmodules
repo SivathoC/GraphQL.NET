@@ -1,0 +1,3 @@
+[submodule "GraphQL.NET"]
+	path = GraphQL.NET
+	url = https://github.com/SivathoC/GraphQL.NET.git
