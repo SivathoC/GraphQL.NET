@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿    using System.Collections.Generic;
 
 namespace GraphQLProductApp.Data;
 
@@ -10,6 +10,8 @@ public class Manufacturers
     public Product Product { get; set; }
 
     public int ComponentsId { get; set; }
+    public Components Components { get; set; } // <-- New navigation property
+    
     public ICollection<Address> Addresses { get; set; }
 }
 
